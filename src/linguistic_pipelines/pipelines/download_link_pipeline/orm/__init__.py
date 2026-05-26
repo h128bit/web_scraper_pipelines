@@ -1,0 +1,1 @@
+from linguistic_pipelines.pipelines.download_link_pipeline.orm.orm import URLFilesTableOrm

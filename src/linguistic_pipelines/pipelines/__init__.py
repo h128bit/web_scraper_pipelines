@@ -1,0 +1,2 @@
+from linguistic_pipelines.pipelines.download_link_pipeline.download_link_pipline import (DownloadLinkPipeline,
+                                                                                         DownloadLinkPipelineAsync)
