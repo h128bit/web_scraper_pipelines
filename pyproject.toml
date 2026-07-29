@@ -3,15 +3,15 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "linguistic_web_scraper_pipelines"
-version = "0.0.0"
-description = "The linguistic project pipelines for work in web"
+name = "web_scraper_pipelines"
+version = "0.0.1"
+description = "LLM-based pipelines for work in web"
 readme = "README.md"
 requires-python = ">=3.11"
 authors = [
     {name = "h128bit"}
 ]
-urls = {Homepage = "https://gitlab.fcpriirf.ru/t.asmus/websearchagent"}
+urls = {Homepage = "https://gitlab.fcpriirf.ru/t.asmus/linguistic_pipelines"}
 keywords = ["llm", "agents", "pipeline"]
 classifiers = [
     "Programming Language :: Python :: 3",

@@ -1,0 +1,34 @@
+web_search_task:
+  description: >
+    Navigate to the site: 
+    {url}
+    
+    Perform the following steps:
+    1. Parse the article list on the current page.
+    2. Extract:
+       - Article title. Don't name article as Download. 
+       - Links:
+        + Link to article card
+        + If exist, direct link for download a file (it's link must be labeled with download or contain in the name data format (like pdf, txt or other))
+          * Not name download link as download. Get her article name
+          * Include only direct download links that point to PDF files.
+          * If you find direct download link then not collect links to other articles and pagination.
+        + Pagination link. For this as paper title write PAG
+    3. Convert all relative URLs to absolute.
+    4. Skip articles without any accessible link or with paywall indicators ("Buy", "Subscribe", "Log in").
+    
+    Do not try guess url, if you not know write null.
+
+  expected_output: >
+    Return result as JSON in format 
+    { 
+      items: [
+        {
+          "name": Article name or "PAG" if url is pagination link. Don't name article url as Download,
+          "url": url to another site page or direct download link or pagination link,
+          "ttype": equal "link" if url is link to another page on site or "direct" if url is direct url to download file. You are must be sure what link is direct else write "link"
+        }, ...
+      ]
+    }
+    Formatted like JSON, without "```"
+    Return only json

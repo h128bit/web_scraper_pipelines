@@ -1,0 +1,1 @@
+from web_scraper_pipelines.pipelines.scrape_journal_pipeline.orm.orm import ViewedURLTableOrm
