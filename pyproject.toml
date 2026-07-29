@@ -11,7 +11,7 @@ requires-python = ">=3.11"
 authors = [
     {name = "h128bit"}
 ]
-urls = {Homepage = "https://gitlab.fcpriirf.ru/t.asmus/linguistic_pipelines"}
+urls = {Homepage = "https://github.com/h128bit/web_scraper_pipelines"}
 keywords = ["llm", "agents", "pipeline"]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -19,7 +19,7 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 dependencies = [
-    "websearchagent @ git+http://gitlab.fgau.local/t.asmus/websearchagent.git",
+    "websearchagent @ git+https://github.com/h128bit/webseachagent",
     "crawl4ai",
     "playwright",
     "pydantic",
