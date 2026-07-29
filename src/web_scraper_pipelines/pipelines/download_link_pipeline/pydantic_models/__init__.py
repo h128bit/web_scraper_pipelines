@@ -1,1 +1,1 @@
-from linguistic_pipelines.pipelines.download_link_pipeline.pydantic_models.models import *
+from web_scraper_pipelines.pipelines.download_link_pipeline.pydantic_models.models import *

@@ -22,7 +22,7 @@ By default, the code creates the following files in the working directory (paths
 
 *Note: The code requires an external `.toml` configuration file (containing LLM and DB parameters) to run, but it does not create this file itself; it only reads it.*
 
-### Examples
+### Example
 
 ```python
 import os 
