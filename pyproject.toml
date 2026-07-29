@@ -26,7 +26,8 @@ dependencies = [
     "peewee",
     "python-dotenv",
     "psycopg2-binary",
-    "beautifulsoup4" 
+    "beautifulsoup4",
+    "toml"
 ]
 
 [tool.setuptools.packages.find]
