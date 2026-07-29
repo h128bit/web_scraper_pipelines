@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install sphinx furo  
+          pip install sphinx furo myst-parser
           pip install -e .  
 
       - name: Build documentation
