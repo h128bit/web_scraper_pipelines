@@ -1,3 +1,5 @@
+import tempfile
+
 from peewee import Model, SqliteDatabase, PostgresqlDatabase
 
 

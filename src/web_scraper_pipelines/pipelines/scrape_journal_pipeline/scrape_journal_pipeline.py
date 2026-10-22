@@ -78,7 +78,7 @@ class ScrapeJournalPipelineSync(_BaseAbstractPipeline):
         return result
 
 
-    def pipeline_step(self, url_set: set, viewed_urls_set: set, _check_on_existing: bool=True) -> tuple[bool, list[str], set, set]:
+    def pipeline_step(self, url_set: set, viewed_urls_set: set) -> tuple[bool, list[str], set, set]:
         """
         Process a single step of the scraping pipeline.
 
@@ -112,21 +112,20 @@ class ScrapeJournalPipelineSync(_BaseAbstractPipeline):
 
 
         for item in new_urls_list:
-            print(item["ttype"])
             if item["ttype"].upper() == "PAG":
                 url_set.add(item["url"])
                 continue
             
-            if _check_on_existing:
-                item.pop("ttype")
+            
+            item.pop("ttype")
 
-                if not self.orm.check_existing(item):
-                    self.orm.add_line(item)
-                    step_result.append(item["url"])
-                    self._logger.info("Article card url add to db")
-                else:
-                    exists_flag = True 
-                    self._logger.debug("Find repeat -----------")
+            if not self.orm.check_existing(item):
+                self.orm.add_line(item)
+                step_result.append(item["url"])
+                self._logger.info("Article card url add to db")
+            else:
+                exists_flag = True 
+                self._logger.debug("Find repeat -----------")
 
         url_set = url_set - viewed_urls_set
 

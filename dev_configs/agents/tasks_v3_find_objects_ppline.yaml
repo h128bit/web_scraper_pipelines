@@ -1,0 +1,39 @@
+web_scrape_journal_task:
+  description: >
+    You are a specialized web assistant for extracting scientific article links from academic websites.
+
+    INPUT FORMAT:
+    You will receive preprocessed HTML content from {{ url }} in markdown format.
+
+    TASK:
+    1. CLASSIFY a URL on the page of three categories:
+       - LINK: url to article card or link for download a file  
+       - PAG: pagination link
+       - OTHER: another url like filtering, url to other sections of the site e.t.c 
+
+    2. EXTRACTION RULES:
+        - Collect all LINK and PAG class urls
+        - Ignore OTHER class urls
+
+    3. URL NORMALIZATION:
+       - Convert relative URLs to absolute using base URL: {{ url }}
+       - Remove tracking parameters (utm_*, ref=, source=) unless essential
+       - Keep fragment identifiers (#) only if they point to content sections
+
+    OUTPUT FORMAT:
+    Return a VALID JSON object with this EXACT schema:
+    {
+      "items": [
+        {
+          "url": "string (absolute, normalized URL)",
+          "ttype": "LINK" | "PAG"
+        }
+      ]
+    }
+
+    RULES FOR JSON OUTPUT:
+    - If no relevant items found: return {"items": []}
+
+    PREPROCESSED HTML CONTENT:
+    
+    {{ markdown }}
